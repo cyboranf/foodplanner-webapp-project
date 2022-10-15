@@ -43,8 +43,7 @@ public class RegisterController {
         user.setEmail(email);
         user.setPassword(password);
         userService.saveUser(user);
-        Cookie cookie = new Cookie("cookieName", user.getFirstname());
-        response.addCookie(cookie);
+
 
         User user1 = userService.findById(1L);
         Admin admin = new Admin();
