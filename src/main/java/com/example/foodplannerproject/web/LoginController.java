@@ -37,16 +37,17 @@ public class LoginController {
                           @RequestParam String email,
                           @RequestParam String password) {
         List<User> userList = userService.findAll();
-        User user = new User();
+
+        String theEnd = "";
         for (User userF : userList) {
             if (userF.getEmail().equals(email) && userF.getPassword().equals(password)) {
-                response.addCookie(new Cookie("cookieName",userF.getFirstname()));
-                return "redirect:/app/dashboard";
+                response.addCookie(new Cookie("cookieName", userF.getFirstname()));
+                theEnd = "redirect:/app/dashboard";
+                break;
             } else {
-                return "redirect:/login";
+                theEnd = "redirect:/login";
             }
         }
-        return null;
-
+        return theEnd;
     }
 }

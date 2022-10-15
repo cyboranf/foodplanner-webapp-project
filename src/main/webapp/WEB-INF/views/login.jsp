@@ -6,7 +6,7 @@
         <div class="border-dashed view-height">
             <div class="container w-25">
                 <form class="padding-small text-center" method="post">
-                    <h1 class="text-color-darker">Logowanie</h1>
+                    <h1 class="text-color-darker">Sign in</h1>
                     <div class="form-group">
                         <input type="text" class="form-control" id="email" name="email" placeholder="email">
                     </div>
