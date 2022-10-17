@@ -42,6 +42,7 @@ public class LoginController {
         for (User userF : userList) {
             if (userF.getEmail().equals(email) && userF.getPassword().equals(password)) {
                 response.addCookie(new Cookie("cookieName", userF.getFirstname()));
+                if (userF.getId()==1) response.addCookie(new Cookie("CookieAdmin",String.valueOf(1)));
                 theEnd = "redirect:/app/dashboard";
                 break;
             } else {

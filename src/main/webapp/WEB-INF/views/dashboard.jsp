@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@include file="appheader.jsp"%>--%>
+<%@include file="appheader.jsp"%>
 
 <div class="m-4 p-4 width-medium">
     <div class="dashboard-header m-4">
@@ -8,19 +8,19 @@
             <div class="menu-item border-dashed">
                 <a href="/app/recipe/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">dodaj przepis</span>
+                    <span class="title">Add recipe</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
                 <a href="/app/plan/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">dodaj plan</span>
+                    <span class="title">Add plan</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
                 <a href="/app/plan/addrecipes">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">dodaj przepis do planu</span>
+                    <span class="title">Add recipe to plan</span>
                 </a>
             </div>
         </div>
@@ -28,17 +28,17 @@
         <div class="dashboard-alerts">
             <div class="alert-item alert-info">
                 <i class="fas icon-circle fa-info-circle"></i>
-                <span class="font-weight-bold">Liczba przepisów: ${numberOfRecipe}</span>
+                <span class="font-weight-bold">No. Recipes: ${numberOfRecipe}</span>
             </div>
             <div class="alert-item alert-light">
                 <i class="far icon-calendar fa-calendar-alt"></i>
-                <span class="font-weight-bold">Liczba planów: ${numberOfPlans}</span>
+                <span class="font-weight-bold">No. Plans: ${numberOfPlans}</span>
             </div>
         </div>
     </div>
     <div class="m-4 p-4 border-dashed">
         <h2 class="dashboard-content-title">
-            <span>Ostatnio dodany plan:</span> ${planLast[0].planName}
+            <span>Last Plan:</span> ${planLast[0].planName}
         </h2>
         <c:forEach var="entry" items="${map}">
         <table class="table">
