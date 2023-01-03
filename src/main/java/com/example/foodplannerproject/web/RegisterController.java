@@ -19,41 +19,5 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class RegisterController {
-    private final UserService userService;
-    private final AdminService adminService;
 
-    public RegisterController(UserService userService, AdminService adminService) {
-        this.userService = userService;
-        this.adminService = adminService;
-    }
-
-    @GetMapping("/registration")
-    public ModelAndView showForm() {
-        return new ModelAndView("register");
-    }
-
-    @PostMapping("/registration")
-    public String submit(@RequestParam String name, @RequestParam String surname,
-                         @RequestParam String email, @RequestParam String password,
-                         HttpServletRequest request, @NotNull HttpServletResponse response) {
-        User user = new User();
-
-        user.setFirstname(name);
-        user.setLastName(surname);
-        user.setEmail(email);
-        user.setPassword(password);
-        userService.saveUser(user);
-
-
-        User user1 = userService.findById(1L);
-        Admin admin = new Admin();
-        admin.setFirstname(user1.getFirstname());
-        admin.setLastName(user1.getLastName());
-        admin.setEmail(user1.getEmail());
-        admin.setPassword(user1.getPassword());
-        adminService.save(admin);
-
-
-        return "redirect:/login";
-    }
 }
