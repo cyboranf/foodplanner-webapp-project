@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ContactController {
     @GetMapping("/contact")
-    public ModelAndView show(){
-        return new ModelAndView("contact");
+    public String show() {
+        return "contact";
     }
 }
