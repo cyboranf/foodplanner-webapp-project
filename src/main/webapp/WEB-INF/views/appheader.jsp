@@ -42,7 +42,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/app/recipe/list">
-                    <span>Recipesy</span>
+                    <span>Recipes</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
