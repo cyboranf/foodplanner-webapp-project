@@ -43,6 +43,8 @@ public class LoginController {
 
             User finalUser = loginUser.get(0);
             Cookie cookieName = new Cookie("cookieName", finalUser.getFirstname());
+            Cookie cookieEmail = new Cookie("cookieEmail", finalUser.getEmail());
+            response.addCookie(cookieEmail);
             response.addCookie(cookieName);
 
             return "redirect:/app/dashboard";
