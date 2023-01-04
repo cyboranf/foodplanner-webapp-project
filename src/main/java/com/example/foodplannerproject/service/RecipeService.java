@@ -16,12 +16,16 @@ public class RecipeService {
         this.recipeRepository = recipeRepository;
     }
 
-    public Recipe saveRecipe(Recipe recipe){
+    public Recipe saveRecipe(Recipe recipe) {
         recipeRepository.save(recipe);
         return recipe;
     }
 
-    public List<Recipe> findAll(){
+    public Integer countOfRecipes() {
+        return recipeRepository.quantityOfAllRecipes();
+    }
+
+    public List<Recipe> findAll() {
         return recipeRepository.findAll();
     }
 }

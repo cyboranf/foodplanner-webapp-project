@@ -16,7 +16,11 @@ public class PlanService {
         this.planRepository = planRepository;
     }
 
-    public List<Plan> findAll(){
+    public List<Plan> findAll() {
         return planRepository.findAll();
+    }
+
+    public Integer quantityOfPlans() {
+        return planRepository.quantityOfAllPlans();
     }
 }
