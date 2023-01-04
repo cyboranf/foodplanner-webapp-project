@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -32,6 +33,6 @@ public class Recipe {
     @Column(name = "preparationTime")
     private int preparationTime;
 
-
-
+    @ManyToOne
+    private Plan plan;
 }

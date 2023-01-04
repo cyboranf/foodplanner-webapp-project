@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,5 +31,10 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @OneToMany
+    private List<Plan> plans;
+
+    @OneToMany
+    List<Recipe> recipes;
 
 }
