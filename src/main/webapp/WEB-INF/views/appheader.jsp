@@ -20,12 +20,12 @@
 <body>
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-between">
-        <a href="/" class="navbar-brand main-logo main-logo-smaller">
+        <a href="/app/dashboard" class="navbar-brand main-logo main-logo-smaller">
             Food <span>Planner</span>
         </a>
         <div class="d-flex justify-content-around">
             <h4 class="text-light mr-3">Cześć, ${cookie.cookieName.value}
-                <a href="/logout">log out?</a> </h4>
+                <a href="/logout">log out?</a></h4>
             <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
         </div>
     </nav>
