@@ -41,13 +41,17 @@ public class LoginController {
                     filter(u -> u.getEmail().equals(email) && u.getPassword().equals(password))
                     .collect(Collectors.toList());
 
-            User finalUser = loginUser.get(0);
-            Cookie cookieName = new Cookie("cookieName", finalUser.getFirstname());
-            Cookie cookieEmail = new Cookie("cookieEmail", finalUser.getEmail());
-            response.addCookie(cookieEmail);
-            response.addCookie(cookieName);
+            if (loginUser.size() == 0) {
+                return "login";
+            } else {
+                User finalUser = loginUser.get(0);
+                Cookie cookieName = new Cookie("cookieName", finalUser.getFirstname());
+                Cookie cookieEmail = new Cookie("cookieEmail", finalUser.getEmail());
+                response.addCookie(cookieEmail);
+                response.addCookie(cookieName);
 
-            return "redirect:/app/dashboard";
+                return "redirect:/app/dashboard";
+            }
         }
     }
 
