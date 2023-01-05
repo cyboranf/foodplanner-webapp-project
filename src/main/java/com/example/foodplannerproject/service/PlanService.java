@@ -23,4 +23,8 @@ public class PlanService {
     public Integer quantityOfPlans() {
         return planRepository.quantityOfAllPlans();
     }
+
+    public Plan save(Plan plan) {
+        return planRepository.save(plan);
+    }
 }
