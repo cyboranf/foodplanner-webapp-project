@@ -28,4 +28,8 @@ public class RecipeService {
     public List<Recipe> findAll() {
         return recipeRepository.findAll();
     }
+
+    public Recipe findRecipeById(Long id) {
+        return recipeRepository.findById(id).get();
+    }
 }
