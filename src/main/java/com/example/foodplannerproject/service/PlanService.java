@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -26,5 +27,9 @@ public class PlanService {
 
     public Plan save(Plan plan) {
         return planRepository.save(plan);
+    }
+
+    public Plan findById(Long id) {
+        return planRepository.findById(id).get();
     }
 }
