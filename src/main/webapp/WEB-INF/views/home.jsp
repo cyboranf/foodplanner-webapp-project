@@ -54,7 +54,7 @@
         </div>
         <div class="ml-4 align-self-center">
             <button class="btn btn-color rounded-0 mt-4 pl-4 pr-4">
-                <a href="/app/dashboard">Zaplanuj Posiłki</a>
+                <a href="/login">Sign in</a>
             </button>
         </div>
     </div>
