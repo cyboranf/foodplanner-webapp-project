@@ -24,7 +24,7 @@
             Food <span>Planner</span>
         </a>
         <div class="d-flex justify-content-around">
-            <h4 class="text-light mr-3">Cześć, ${cookie.cookieName.value}
+            <h4 class="text-light mr-3">Hi, ${cookie.cookieName.value}
                 <a href="/logout">log out?</a></h4>
             <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
         </div>
