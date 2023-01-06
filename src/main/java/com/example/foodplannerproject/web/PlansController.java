@@ -3,6 +3,7 @@ package com.example.foodplannerproject.web;
 import com.example.foodplannerproject.domain.Plan;
 import com.example.foodplannerproject.domain.Recipe;
 import com.example.foodplannerproject.service.PlanService;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,6 +59,28 @@ public class PlansController {
         model.addAttribute("plan", showedPlan);
 
         return "appPlanDetails";
+    }
+
+    @GetMapping("/app/plan/edit")
+    public String showPlanEditView(@RequestParam String id,
+                                   Model model) {
+        Plan showedPlan = planService.findById(Long.parseLong(id));
+        model.addAttribute("plan", showedPlan);
+
+        return "appPlanEdit";
+    }
+
+    @PostMapping("/app/plan/edit")
+    public String editPlan(@RequestParam String id,
+                           @RequestParam String planName,
+                           @RequestParam String planDescription) {
+        Plan editedPlan = planService.findById(Long.parseLong(id));
+
+        editedPlan.setName(planName);
+        editedPlan.setDescription(planDescription);
+
+        planService.save(editedPlan);
+        return "redirect:/app/plan/list";
     }
 
 
