@@ -1,6 +1,7 @@
 package com.example.foodplannerproject.web;
 
 import com.example.foodplannerproject.domain.Plan;
+import com.example.foodplannerproject.domain.Recipe;
 import com.example.foodplannerproject.service.PlanService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -48,4 +50,15 @@ public class PlansController {
             return "redirect:/app/dashboard";
         }
     }
+
+    @GetMapping("/app/plan/details")
+    public String showPlanDetails(@RequestParam String id,
+                                  Model model) {
+        Plan showedPlan = planService.findById(Long.parseLong(id));
+        model.addAttribute("plan", showedPlan);
+
+        return "appPlanDetails";
+    }
+
+
 }
