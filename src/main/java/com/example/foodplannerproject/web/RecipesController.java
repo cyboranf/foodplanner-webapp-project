@@ -60,4 +60,13 @@ public class RecipesController {
         }
     }
 
+    @GetMapping("/recipes/details")
+    public String showRecipeDetails(@RequestParam String id,
+                                    Model model) {
+        Recipe recipeToShow = recipeService.findRecipeById(Long.parseLong(id));
+        model.addAttribute("recipe", recipeToShow);
+
+        return "appRecipeDetails";
+    }
+
 }
