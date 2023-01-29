@@ -1,5 +1,5 @@
 # FoodPlanner-Project
-**This is project, where I make a FoodPlanner app.**
+**This is project, where I made a FoodPlanner app.**
 
 * -Add recipe
 * -Add plan
